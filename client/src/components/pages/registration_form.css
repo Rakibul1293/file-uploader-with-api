@@ -1,0 +1,21 @@
+.forms {
+    margin: 30px 100px;
+}
+
+.forms input {
+    display: block;
+    margin-top: 30px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.form-margin {
+	margin-left: 395px!important;
+}
+
+.error {
+    color: red;
+	display: block;
+}
