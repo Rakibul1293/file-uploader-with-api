@@ -21,10 +21,10 @@ const LoginForm = () => {
 			body: JSON.stringify(data),
 		})
 		.then(res => res.json())
-		.then(data => {
+		.then((data: any) => {
 			console.log(data);
 			localStorage.setItem("token", JSON.stringify(data.token));
-			localStorage.setItem("name", JSON.stringify(data.user.name));
+			//localStorage.setItem("name", JSON.stringify(data.user.name));
 			if(data.message === "Auth failed") return message.error("User doesn't exist");
 			message.success('Login Successfully!');
 			history.push('/list');

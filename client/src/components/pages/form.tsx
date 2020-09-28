@@ -46,7 +46,7 @@ const Form = () => {
 		.then((data: any) => {
 			console.log(data);
 			localStorage.setItem("token", JSON.stringify(data.token));
-			localStorage.setItem("name", JSON.stringify(data.user.name));
+			//localStorage.setItem("name", JSON.stringify(data.user.name));
 			if(data.message === "Auth failed") return message.error("You are not registerd user !!!");
 			message.success('User Added Successfully!');
 			history.push('/list');
