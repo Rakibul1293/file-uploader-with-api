@@ -35,6 +35,9 @@ const Form = () => {
         })
 		.then(data => {
 			console.log(data);
+			localStorage.setItem("token", JSON.stringify(data.token));
+			localStorage.setItem("name", JSON.stringify(data.user.name));
+			if(data.message === "Auth failed") return message.error("User doesn't exist");
 			message.success('User Added Successfully!');
 			history.push('/list');
 		})
