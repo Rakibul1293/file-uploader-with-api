@@ -28,7 +28,7 @@ const ShowImage = () => {
 		const param_id = e.target.search.value;
 		setId(param_id);
 		
-		axios.get(`http://localhost:5000/api/image/${param_id}`)
+		axios.get(`https://file-uploader-with-api.herokuapp.com/api/image/${param_id}`)
 		  .then(res => {
 			console.log(res);
 			setImgUrl(res.data.imgurl);
