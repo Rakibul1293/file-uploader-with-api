@@ -26,15 +26,8 @@ const Form = () => {
 		formData.append('file', data.file[0]);
 		formData.append('TextField', data.TextField);
 		formData.append('select', data.select.value);
-		
-		//axios.post('http://localhost:5000/api/userInfo', formData, {
+				
 		/*
-		axios.post('https://file-uploader-with-api.herokuapp.com/api/userInfo', formData, {
-			headers: {
-			  'Content-Type': 'multipart/form-data'
-			}
-        })
-		*/
 		fetch("https://file-uploader-with-api.herokuapp.com/api/userInfo", {
 			method: 'POST',
 			headers: {
@@ -42,6 +35,14 @@ const Form = () => {
 			},
 			body: JSON.stringify(data),
 		})
+		*/
+		
+		//axios.post('http://localhost:5000/api/userInfo', formData, {
+		axios.post('https://file-uploader-with-api.herokuapp.com/api/userInfo', formData, {
+			headers: {
+			  'Content-Type': 'multipart/form-data'
+			}
+        })
 		.then(data => {
 			console.log(data);
 			//localStorage.setItem("token", JSON.stringify(data.token));
