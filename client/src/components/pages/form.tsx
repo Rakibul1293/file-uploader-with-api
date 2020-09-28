@@ -43,7 +43,7 @@ const Form = () => {
 			  'Content-Type': 'multipart/form-data'
 			}
         })
-		.then(data => {
+		.then((data: any) => {
 			console.log(data);
 			localStorage.setItem("token", JSON.stringify(data.token));
 			localStorage.setItem("name", JSON.stringify(data.user.name));
