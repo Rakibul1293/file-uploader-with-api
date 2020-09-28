@@ -28,16 +28,25 @@ const Form = () => {
 		formData.append('select', data.select.value);
 		
 		//axios.post('http://localhost:5000/api/userInfo', formData, {
+		/*
 		axios.post('https://file-uploader-with-api.herokuapp.com/api/userInfo', formData, {
 			headers: {
 			  'Content-Type': 'multipart/form-data'
 			}
         })
+		*/
+		fetch("https://file-uploader-with-api.herokuapp.com/api/userInfo", {
+			method: 'POST',
+			headers: {
+				'content-Type': 'multipart/form-data'
+			},
+			body: JSON.stringify(data),
+		})
 		.then(data => {
 			console.log(data);
 			localStorage.setItem("token", JSON.stringify(data.token));
 			localStorage.setItem("name", JSON.stringify(data.user.name));
-			if(data.message === "Auth failed") return message.error("User doesn't exist");
+			if(data.message === "Auth failed") return message.error("You are not registerd user !!!");
 			message.success('User Added Successfully!');
 			history.push('/list');
 		})
