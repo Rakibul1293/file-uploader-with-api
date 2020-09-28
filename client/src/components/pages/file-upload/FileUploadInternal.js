@@ -29,7 +29,8 @@ const FileUploadInternal = () => {
 	setFrmData(formData);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/upload_img_database', formData, {
+      //const res = await axios.post('http://localhost:5000/api/upload_img_database', formData, {
+	  const res = await axios.post('https://file-uploader-with-api.herokuapp.com/api/upload_img_database', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },

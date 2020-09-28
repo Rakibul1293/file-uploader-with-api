@@ -32,7 +32,8 @@ const Form = () => {
 		const path_id = currentLocation.split('/').slice(1).join('/');
 		console.log("Path Id: ", path_id);
 		
-		axios.patch(`http://localhost:5000/api/userInfo/${path_id}`, formData, {
+		//axios.patch(`http://localhost:5000/api/userInfo/${path_id}`, formData, {
+		axios.patch(`https://file-uploader-with-api.herokuapp.com/api/userInfo/${path_id}`, formData, {
 			headers: {
 			  'Content-Type': 'multipart/form-data'
 			}

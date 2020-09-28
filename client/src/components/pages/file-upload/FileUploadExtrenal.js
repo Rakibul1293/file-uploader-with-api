@@ -58,7 +58,8 @@ const FileUploadExtrenal = () => {
 	console.log(formData);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/upload_external', formData, {
+      //const res = await axios.post('http://localhost:5000/api/upload_external', formData, {
+	  const res = await axios.post('https://file-uploader-with-api.herokuapp.com/api/upload_external', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         },

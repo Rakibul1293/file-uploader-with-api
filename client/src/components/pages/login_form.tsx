@@ -12,7 +12,8 @@ const LoginForm = () => {
 	const onSubmit = (data: any) => {
 		console.log(data);
 
-		fetch("http://localhost:5000/auth/login", {
+		//fetch("http://localhost:5000/auth/login", {
+		fetch("https://file-uploader-with-api.herokuapp.com/auth/login", {
 			method: 'POST',
 			headers: {
 				'content-Type': 'application/json'

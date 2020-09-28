@@ -10,7 +10,8 @@ const ShowImage = () => {
 	const [allData, setAllData] = useState([]);
 	
 	useEffect(() => {
-    axios.get('http://localhost:5000/api/files')
+    //axios.get('http://localhost:5000/api/files')
+	axios.get('https://file-uploader-with-api.herokuapp.com/api/files')
 		 .then(res => {
 			console.log(res.data[0].filename);
 			setAllData(res.data);

@@ -12,7 +12,8 @@ const RegistrationForm = () => {
 	const onSubmit = (data: any) => {
 		console.log(data);
 
-		fetch("http://localhost:5000/auth/signup", {
+		//fetch("http://localhost:5000/auth/signup", {
+		fetch("https://file-uploader-with-api.herokuapp.com/auth/signup", {
 			method: 'POST',
 			headers: {
 				'content-Type': 'application/json'

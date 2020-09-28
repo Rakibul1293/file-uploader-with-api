@@ -10,7 +10,8 @@ const List = () => {
   const [allData, setAllData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/')
+    //axios.get('http://localhost:5000/api/')
+	axios.get('https://file-uploader-with-api.herokuapp.com/api/')
       .then(res => {
         console.log(res);
         setAllData(res.data);
