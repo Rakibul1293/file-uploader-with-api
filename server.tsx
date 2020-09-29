@@ -32,7 +32,7 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(methodOverride('_method'));
-
+/*
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -45,7 +45,7 @@ app.use((req, res, next) => {
   }
   next();
 });
-
+*/
 // Routes which should handle requests
 app.use("/api", userInfoRoutes);
 app.use("/auth", userRoutes);
