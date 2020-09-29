@@ -11,7 +11,8 @@ const LoginForm = () => {
 
 	const onSubmit = (data: any) => {
 		console.log(data);
-
+		
+		/*
 		//fetch("http://localhost:5000/auth/login", {
 		fetch("https://file-uploader-with-api.herokuapp.com/auth/login", {
 			method: 'POST',
@@ -20,6 +21,13 @@ const LoginForm = () => {
 			},
 			body: JSON.stringify(data),
 		})
+		*/
+		
+		axios.post('https://file-uploader-with-api.herokuapp.com/auth/login', {
+			headers: {
+			  'Content-Type': 'application/json'
+			}
+        })
 		.then(res => res.json())
 		.then((data: any) => {
 			console.log(data);
