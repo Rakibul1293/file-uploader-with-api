@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Grid = require('gridfs-stream');
 const {parse, stringify} = require('flatted');
+{LocalStorage} = require('node-localstorage');
+localStorage = new LocalStorage('./scratch');
 
 const UserInfo = require('../models/userInfo.tsx');
 
@@ -125,7 +127,7 @@ exports.userInfo_create = (req, res, next) => {
 	 console.log(userInfo);
 	 console.log(mongoose.connection.readyState);
 	 
-	 if(!window.localStorage.getItem("token")) return res.json("You are not registerd user !!!");
+	 if(!localStorage.getItem("token")) return res.json("You are not registerd user !!!");
 	 
 	 userInfo.save()
 		.then(result => {
