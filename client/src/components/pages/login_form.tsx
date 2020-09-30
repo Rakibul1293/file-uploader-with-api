@@ -32,7 +32,7 @@ const LoginForm = () => {
         })
 		//.then((res: any) => res.json())
 		.then((data: any) => {
-			console.log(token);
+			console.log(data);
 			console.log(data.token);
 			//localStorage.setItem("token", JSON.stringify(data.token));
 			localStorage.setItem("token", data.token);
