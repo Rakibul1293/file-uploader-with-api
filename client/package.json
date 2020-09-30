@@ -18,6 +18,7 @@
     "antd": "^4.1.0",
     "axios": "^0.19.2",
     "dom-helpers": "^5.2.0",
+    "dotenv": "^8.2.0",
     "flatted": "^3.0.5",
     "json-server": "^0.16.1",
     "react": "^16.13.1",

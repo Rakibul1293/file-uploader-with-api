@@ -1,9 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 //const cors = require('cors');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-require('dotenv').config();
 const path = require('path');
 const methodOverride = require('method-override');
 const crypto = require('crypto');
