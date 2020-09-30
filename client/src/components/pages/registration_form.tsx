@@ -23,7 +23,7 @@ const RegistrationForm = () => {
 		})
 		*/
 		
-		axios.post('https://file-uploader-with-api.herokuapp.com/api/userInfo', {
+		axios.post('https://file-uploader-with-api.herokuapp.com/auth/signup', {
 			headers: {
 			  'Content-Type': 'application/json'
 			}
