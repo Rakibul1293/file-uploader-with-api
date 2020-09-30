@@ -28,8 +28,8 @@ const RegistrationForm = () => {
 			  'Content-Type': 'application/json'
 			}
         })
-		.then((res: any) => res.json())
-		.then(data => {
+		//.then((res: any) => res.json())
+		.then((data: any) => {
 			console.log(data);
 			message.success('Registration Successfully!');
 			history.push('/login-form');
