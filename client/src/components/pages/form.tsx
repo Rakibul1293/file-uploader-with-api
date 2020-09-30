@@ -55,7 +55,7 @@ const Form = () => {
 		})
 		.catch(err => {
 			console.log(err);
-			message.error(err);
+			message.error("You are not registerd user !!!");
 		})
 	}
 
