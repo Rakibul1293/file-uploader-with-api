@@ -30,7 +30,7 @@ const LoginForm = () => {
 			  //'Authorization' : `Bearer ${}`
 			}
         })
-		.then((res: any) => res.json())
+		//.then((res: any) => res.json())
 		.then((data: any) => {
 			console.log(data);
 			localStorage.setItem("token", JSON.stringify(data.token));
