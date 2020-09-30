@@ -14,6 +14,7 @@ exports.user_signup = (req, res, next) => {
   User.find({ email: req.body.email })
     .exec()
     .then(user => {
+	  console.log(user);
       if (user.length >= 1) {
         return res.status(409).json({
           message: "Mail exists"
@@ -21,6 +22,7 @@ exports.user_signup = (req, res, next) => {
       } else {
         bcrypt.hash(req.body.password, 10, (err, hash) => {
           if (err) {
+			console.log(err);
             return res.status(500).json({
               error: err
             });
