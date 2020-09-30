@@ -32,18 +32,19 @@ const LoginForm = () => {
         })
 		//.then((res: any) => res.json())
 		.then((data: any) => {
+			console.log(Object.keys(data));
 			console.log(data);
-			console.log(data.token);
-			//localStorage.setItem("token", JSON.stringify(data.token));
-			localStorage.setItem("token", data.token);
-			//localStorage.setItem("name", JSON.stringify(data.user.name));
-			if(data.message === "Auth failed") return message.error("User doesn't exist");
+			console.log(data.data);
+			//localStorage.setItem("token", JSON.stringify(data.data.token));
+			localStorage.setItem("token", data.data.token);
+			//localStorage.setItem("name", JSON.stringify(data.data.user.name));
+			if(data.data.message === "Auth failed") return message.error("User doesn't exist");
 			message.success('Login Successfully!');
 			history.push('/list');
 		})
 		.catch(err => {
 			console.log(err);
-			message.error(err);
+			message.error("User doesn't exist");
 		})
 	}
   
