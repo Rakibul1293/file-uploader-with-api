@@ -5,6 +5,7 @@ import { useHistory } from 'react-router';
 import Select from "react-select";
 import { Input as InputField, message } from "antd";
 import './form.css';
+require('dotenv').config();
 
 const Form = () => {
 	const { register, handleSubmit, control, errors } = useForm();
@@ -41,6 +42,7 @@ const Form = () => {
 		axios.post('https://file-uploader-with-api.herokuapp.com/api/userInfo', formData, {
 			headers: {
 			  'Content-Type': 'multipart/form-data'
+			  //'Authorization' : `Bearer ${}`
 			}
         })
 		.then((data: any) => {

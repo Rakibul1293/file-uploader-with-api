@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router';
 import { Input as InputField, message } from "antd";
 import './login_form.css';
+require('dotenv').config();
 
 const LoginForm = () => {
 	const { register, handleSubmit, control, errors } = useForm();
@@ -26,6 +27,7 @@ const LoginForm = () => {
 		axios.post('https://file-uploader-with-api.herokuapp.com/auth/login', {
 			headers: {
 			  'Content-Type': 'application/json'
+			  //'Authorization' : `Bearer ${}`
 			}
         })
 		.then((res: any) => res.json())
