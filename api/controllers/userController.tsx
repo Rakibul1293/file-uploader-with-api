@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
