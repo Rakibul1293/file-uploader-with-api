@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Grid = require('gridfs-stream');
 const {parse, stringify} = require('flatted');
-const LocalStorage = require('node-localstorage');
-localStorage = new LocalStorage('./scratch');
+const {LocalStorage} = require('node-localstorage');
+global.localStorage = new LocalStorage('./scratch');
 
 const UserInfo = require('../models/userInfo.tsx');
 
