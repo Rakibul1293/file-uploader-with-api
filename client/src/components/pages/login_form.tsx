@@ -24,7 +24,7 @@ const LoginForm = () => {
 		})
 		*/
 		
-		axios.post('https://file-uploader-with-api.herokuapp.com/auth/login', {
+		axios.post('https://file-uploader-with-api.herokuapp.com/auth/login', data, {
 			headers: {
 			  'Content-Type': 'application/json'
 			  //'Authorization' : `Bearer ${}`
