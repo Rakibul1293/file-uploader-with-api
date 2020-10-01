@@ -13,31 +13,17 @@ const LoginForm = () => {
 	const onSubmit = (data: any) => {
 		console.log(data);
 		
-		/*
-		//fetch("http://localhost:5000/auth/login", {
-		fetch("https://file-uploader-with-api.herokuapp.com/auth/login", {
-			method: 'POST',
-			headers: {
-				'content-Type': 'application/json'
-			},
-			body: JSON.stringify(data),
-		})
-		*/
-		
 		axios.post('https://file-uploader-with-api.herokuapp.com/auth/login', data, {
 			headers: {
 			  'Content-Type': 'application/json'
 			  //'Authorization' : `Bearer ${}`
 			}
         })
-		//.then((res: any) => res.json())
 		.then((data: any) => {
 			console.log(Object.keys(data));
 			console.log(data);
 			console.log(data.data);
-			//localStorage.setItem("token", JSON.stringify(data.data.token));
 			localStorage.setItem("token", data.data.token);
-			//localStorage.setItem("name", JSON.stringify(data.data.user.name));
 			if(data.data.message === "Auth failed") return message.error("User doesn't exist");
 			message.success('Login Successfully!');
 			history.push('/list');

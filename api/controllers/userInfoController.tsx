@@ -122,7 +122,6 @@ exports.userInfo_create = (req, res, next) => {
 	 console.log(req.body.filename);
 	 //console.log(req.body.file[0]);
 	 console.log(userInfo);
-	 console.log(mongoose.connection.readyState);
 	 
 	 if(!req.body.token) return res.status(500).json("You are not registerd user !!!");
 	 

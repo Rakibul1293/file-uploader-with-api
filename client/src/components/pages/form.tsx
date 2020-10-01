@@ -28,28 +28,16 @@ const Form = () => {
 		formData.append('TextField', data.TextField);
 		formData.append('select', data.select.value);
 		formData.append('token', localStorage.getItem("token"));
-				
-		/*
-		fetch("https://file-uploader-with-api.herokuapp.com/api/userInfo", {
-			method: 'POST',
-			headers: {
-				'content-Type': 'multipart/form-data'
-			},
-			body: JSON.stringify(data),
-		})
-		*/
 		
 		//axios.post('http://localhost:5000/api/userInfo', formData, {
 		axios.post('https://file-uploader-with-api.herokuapp.com/api/userInfo', formData, {
 			headers: {
 			  'Content-Type': 'multipart/form-data'
-			  //'Authorization' : `Bearer ${}`
 			}
         })
 		.then((data: any) => {
 			console.log(data);
-			//localStorage.setItem("name", JSON.stringify(data.user.name));
-			//if(!localStorage.getItem("token")) return message.error("You are not registerd user !!!");
+			if(!localStorage.getItem("token")) return message.error("You are not registerd user !!!");
 			message.success('User Added Successfully!');
 			history.push('/list');
 		})
