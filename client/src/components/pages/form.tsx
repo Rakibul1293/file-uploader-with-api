@@ -27,6 +27,7 @@ const Form = () => {
 		formData.append('file', data.file[0]);
 		formData.append('TextField', data.TextField);
 		formData.append('select', data.select.value);
+		formData.append('token', localStorage.getItem("token"));
 				
 		/*
 		fetch("https://file-uploader-with-api.herokuapp.com/api/userInfo", {

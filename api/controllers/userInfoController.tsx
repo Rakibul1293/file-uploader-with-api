@@ -3,9 +3,6 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Grid = require('gridfs-stream');
-const {parse, stringify} = require('flatted');
-const {LocalStorage} = require('node-localstorage');
-global.localStorage = new LocalStorage('./scratch');
 
 const UserInfo = require('../models/userInfo.tsx');
 
@@ -127,9 +124,7 @@ exports.userInfo_create = (req, res, next) => {
 	 console.log(userInfo);
 	 console.log(mongoose.connection.readyState);
 	 
-	 console.log(localStorage.getItem("token"));
-	 console.log(!localStorage.getItem("token"));
-	 if(!localStorage.getItem("token")) return res.status(500).json("You are not registerd user !!!");
+	 if(!req.body.token)) return res.status(500).json("You are not registerd user !!!");
 	 
 	 userInfo.save()
 		.then(result => {
