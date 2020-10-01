@@ -119,7 +119,7 @@ exports.userInfo_create = (req, res, next) => {
 		image: req.body.imageUrl,
 		selectedVal: req.body.select
 	 });
-	 console.log(req.body.filename);
+	 //console.log(req.body.filename);
 	 //console.log(req.body.file[0]);
 	 
 	 //console.log(userInfo);
@@ -129,7 +129,7 @@ exports.userInfo_create = (req, res, next) => {
 	 
 	 userInfo.save()
 		.then(result => {
-		  console.log(result);
+		  //console.log(result);
 		  res.status(201).json({
 			result: result,
 			message: "User Info Created Successfully",
