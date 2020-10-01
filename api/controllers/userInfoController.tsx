@@ -101,8 +101,8 @@ exports.userInfo_get_all = (req, res, next) => {
 //};
 exports.userInfo_create = (req, res, next) => {
    console.log(req.body);
-   //console.log(req.files);
-   //console.log(req.files[0].filename);
+   console.log(req.files);
+   console.log(req.files[0].filename);
    //res.json({ file: req.file, fileName: req.file.originalname, filePath: req.file.destination });
   
    const responses = (res, files, originalname, imgUrl) => {
@@ -119,13 +119,13 @@ exports.userInfo_create = (req, res, next) => {
 		image: req.body.imageUrl,
 		selectedVal: req.body.select
 	 });
-	 //console.log(req.body.filename);
+	 console.log(req.body.filename);
 	 //console.log(req.body.file[0]);
 	 
 	 //console.log(userInfo);
 	 console.log(req.body.token);
 	 
-	 if(!req.body.token) return res.status(500).json("You are not registerd user !!!");
+	 if(req.body.token) return res.status(500).json("You are not registerd user !!!");
 	 
 	 userInfo.save()
 		.then(result => {
