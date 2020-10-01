@@ -100,7 +100,7 @@ exports.userInfo_get_all = (req, res, next) => {
 */
 //};
 exports.userInfo_create = (req, res, next) => {
-   //console.log(req.body);
+   console.log(req.body);
    console.log(req.files);
    console.log(req.files[0].filename);
    //res.json({ file: req.file, fileName: req.file.originalname, filePath: req.file.destination });
