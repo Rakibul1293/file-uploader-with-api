@@ -27,7 +27,7 @@ const Form = () => {
 		formData.append('file', data.file[0]);
 		formData.append('TextField', data.TextField);
 		formData.append('select', data.select.value);
-		formData.append('token', data.token);
+		formData.append('token', localStorage.getItem("token"));
 		
 		//axios.post('http://localhost:5000/api/userInfo', formData, {
 		axios.post('https://file-uploader-with-api.herokuapp.com/api/userInfo', formData, {
