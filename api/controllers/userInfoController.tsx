@@ -127,7 +127,7 @@ exports.userInfo_create = (req, res, next) => {
 	 console.log(userInfo);
 	 console.log(mongoose.connection.readyState);
 	 
-	 if(!localStorage.getItem("token")) return res.json("You are not registerd user !!!");
+	 if(!localStorage.getItem("token") || localStorage.getItem("token") == "undefined") return message.error("You are not registerd user !!!");
 	 
 	 userInfo.save()
 		.then(result => {
