@@ -48,7 +48,7 @@ const Form = () => {
 		.then((data: any) => {
 			console.log(data);
 			//localStorage.setItem("name", JSON.stringify(data.user.name));
-			if(!localStorage.getItem("token")) return message.error("You are not registerd user !!!");
+			//if(!localStorage.getItem("token")) return message.error("You are not registerd user !!!");
 			message.success('User Added Successfully!');
 			history.push('/list');
 		})
